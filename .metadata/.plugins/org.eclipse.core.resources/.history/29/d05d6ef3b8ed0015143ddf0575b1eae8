@@ -1,0 +1,39 @@
+package ua.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import service.BuyerService;
+
+
+@Controller
+
+public class BuyerController {
+	@Autowired
+	private BuyerService buyerService;
+	@RequestMapping("/Buyer")
+	@RequestMapping("")
+	public String save()
+	
+	public String show(Model model){
+		model.addAttribute("buyers", buyerService.getAll());
+		return "buyer";
+		
+		@RequestMapping (value="/buyer", method = RequestMethod.POST)
+		public String buyerPost(@RequestParam int id,@RequestParam String firstName ){
+			buyerService.save( id, firstName);
+			return "redirect:/buyer";
+			
+			@RequestMapping(value = "/buyer{id}")
+			public String delete(@PathVariable String id){
+				buyerService.delete(Integer, parseInt(id);
+				return "redirect:/buyer";
+				
+			}
+		}
+		
+	}
+
+}

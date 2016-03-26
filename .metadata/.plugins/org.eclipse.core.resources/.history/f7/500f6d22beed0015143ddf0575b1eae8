@@ -1,0 +1,11 @@
+package service;
+
+import com.entity.Buyer;
+
+public interface BuyerService {
+
+	Iterable<Buyer> getAll();
+
+	void delete(Object integer, Object parseInt);
+
+}
